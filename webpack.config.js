@@ -9,9 +9,17 @@ const htmlPlugin = new HtmlWebpackPlugin({ // 创建插件实例对象
 module.exports = {
 	mode: 'development', // mode 用来指定构建模式
 	entry: path.join(__dirname, './src/index.js'),
-	output: {
+	output: {	// 输出文件存放路径
 		path: path.join(__dirname, './dist'),
 		filename: 'bundle.js'
 	},
-	plugins:[htmlPlugin]
+	plugins:[htmlPlugin],
+	// 所有第三方文件模块的匹配规则
+	module:{
+		rules:[
+			{test:/\.css$/,use:['style-loader','css-loader']},
+			{test:/\.less$/,use:['style-loader','css-loader','less-loader']},
+			{test:/\.scss$/,use:['style-loader','css-loader','sass-loader']}
+		]
+	}
 }
