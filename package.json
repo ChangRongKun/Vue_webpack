@@ -4,6 +4,7 @@
 	"description": "前端工程化学习",
 	"main": "index.js",
 	"scripts": {
+    "build":"webpack -p",
 		"dev": "webpack-dev-server --open --host 127.0.0.1 --port 8888",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
