@@ -19,7 +19,13 @@
 	},
 	"homepage": "https://github.com/ChangRongKun/Vue_webpack#readme",
 	"devDependencies": {
+		"@babel/core": "^7.11.4",
+		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/plugin-transform-runtime": "^7.11.0",
+		"@babel/preset-env": "^7.11.0",
+		"@babel/runtime": "^7.11.2",
 		"autoprefixer": "^9.8.6",
+		"babel-loader": "^8.1.0",
 		"css-loader": "^4.2.1",
 		"file-loader": "^6.0.0",
 		"html-webpack-plugin": "^4.3.0",
