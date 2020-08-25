@@ -1,10 +1,13 @@
 const path = require('path');
+
 // 导入生成预览页面的插件，得到一个构造函数
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlPlugin = new HtmlWebpackPlugin({ // 创建插件实例对象
   template: './src/index.html', // 指定要用到的模板文件
   filename: 'index.html' // 指定生成文件名字，该文件不可见
 })
+
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   mode: 'development', // mode 用来指定构建模式
@@ -14,7 +17,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'inline-source-map', // 加上对应的配置
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin, new VueLoaderPlugin()],
   // 所有第三方文件模块的匹配规则
   module: {
     rules: [{
@@ -38,6 +41,10 @@ module.exports = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
       }
     ]
   }
