@@ -2,7 +2,7 @@ li {
 	list-style: none;
 }
 
-/* ::placeholder{
+::placeholder {
 	color: red;
 }
 
@@ -11,4 +11,4 @@ li {
 	height: 340px;
 	background-color: pink;
 	background: url(../images/1.jpg);
-} */
+}
